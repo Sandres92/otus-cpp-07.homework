@@ -10,6 +10,6 @@ namespace otus
         StdCoutLogger() = default;
         ~StdCoutLogger() = default;
 
-        void Print(CustomQueue customQueue) const override;
+        void Print(QueueCommands customQueue) const override;
     };
 }

@@ -2,7 +2,7 @@
 
 namespace otus
 {
-    void FileLogger::Print(CustomQueue customQueue) const
+    void FileLogger::Print(QueueCommands customQueue) const
     {
         if (customQueue.Size() == 1)
         {

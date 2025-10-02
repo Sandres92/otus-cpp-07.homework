@@ -1,8 +1,10 @@
 #include <iostream>
 #include <stack>
 #include <queue>
+#include <string>
+#include <vector>
 
-#include "CustomQueue.h"
+#include "QueueCommands.h"
 
 using namespace std;
 
@@ -14,19 +16,28 @@ int main(int argc, char *argv[])
         n = atoi(argv[1]);
     }
 
-    std::cout << n << "\n";
-
-    std::queue<int> s;
-    for (size_t i = 0; i != n; ++i)
-    {
-        s.push(i);
-    }
-
-    while (s.size() != 0)
-    {
-        std::cout << s.front() << " , " << s.back() << "\n";
-        s.pop();
-    }
+    std::vector<std::string> s{
+        "cmd1",
+        "cmd2",
+        "{",
+        "cmd3",
+        "cmd4",
+        "}",
+        "{",
+        "cmd5",
+        "cmd6",
+        "{",
+        "cmd7",
+        "cmd8",
+        "}",
+        "cmd9",
+        "{",
+        "cmd10",
+        "cmd11",
+        "}",
+        "}",
+        "cmd12",
+        "EOF"};
 
     return 0;
 }
