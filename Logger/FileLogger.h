@@ -10,6 +10,6 @@ namespace otus
         FileLogger() = default;
         ~FileLogger() = default;
 
-        void Print(QueueCommands customQueue) const override;
+        // void Print(QueueCommands customQueue) const override;
     };
 }

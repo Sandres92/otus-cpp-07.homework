@@ -1,4 +1,3 @@
-#include "../CustomQueue.h"
 
 namespace otus
 {
@@ -10,6 +9,6 @@ namespace otus
         ILogger() = default;
         ~ILogger() = default;
 
-        virtual void Print(QueueCommands customQueue) const = 0;
+        // virtual void Print(QueueCommands customQueue) const = 0;
     };
 }

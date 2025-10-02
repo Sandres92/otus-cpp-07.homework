@@ -9,7 +9,8 @@ option(WITH_BOOST_TEST "Whether to build Boost test" ON)
 
 configure_file(version.h.in version.h)
 
-add_executable(bulk_cli main.cpp Logger/StdCoutLogger.cpp CustomQueue.cpp)
+add_executable(bulk_cli main.cpp Logger/StdCoutLogger.cpp 
+Command/QueueCommands.cpp Command/Command.cpp Command/ArrayCommands.cpp)
 
 add_library(bulk lib.cpp)
 

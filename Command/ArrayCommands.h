@@ -1,21 +1,29 @@
+#pragma once
+
 #include <string>
 #include <vector>
 #include <queue>
 
-#include "IComand.h"
+#include "Command.h"
 
 namespace otus
 {
-    class ArrayCommands : public ICommand
+    class ArrayCommands : public Command
     {
     public:
         ArrayCommands() = default;
         virtual ~ArrayCommands() = default;
 
     private:
-        size_t pointer = 0;
         std::vector<std::string> commands;
 
         void AddCommand(const std::string &command) override;
+
+        size_t Size() const noexcept override;
+
+        std::string Front() override;
+
+        void Pop() override;
+        bool End() override;
     };
 }
