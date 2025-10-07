@@ -2,7 +2,10 @@
 #include <string>
 #include <vector>
 
-#include "Command/QueueCommands.h"
+#include "Block/StaticBlock.h"
+#include "Block/DynamicBlock.h"
+
+#include "Block2/DynamicBlock2.h"
 
 using namespace std;
 
@@ -14,9 +17,9 @@ int main(int argc, char *argv[])
         n = atoi(argv[1]);
     }
 
-    otus::QueueCommands::SetQuantityCommands(n);
+    otus::StaticBlock::SetQuantityCommands(n);
 
-    // std::vector<std::string> s{
+    // std::vector<std::string> commands{
     //     "cmd1",
     //     "cmd2",
     //     "{",
@@ -39,28 +42,49 @@ int main(int argc, char *argv[])
     //     "cmd12",
     //     "EOF"};
 
-    std::vector<std::string> str{
+    std::vector<std::string> commands{
         "cmd1",
         "cmd2",
-        "cmd3",
         "{",
-        "cmd3_a",
-        "cmd3_b",
+        "{",
+        "cmd_2_1",
+        "{",
+        "cmd_2_1_1",
         "}",
-        "cmd4"};
+        "cmd_2_2",
+        "}",
+        "cmd3",
+        "cmd4",
+        "}"};
 
-    otus::QueueCommands queueCommands;
+    // std::vector<std::string> commands{
+    //     "cmd1",
+    //     "cmd2",
+    //     "cmd3",
+    //     "{",
+    //     "cmd3_a",
+    //     "{",
+    //     "cmd3_a_a",
+    //     "}",
+    //     "cmd3_b",
+    //     "}",
+    //     "cmd4"};
 
-    // for (const auto &s : str)
-    //{
-    //     std::cout << s << "\n";
-    // }
+    otus::StaticBlock staticBlock;
 
-    for (const auto &s : str)
+    // commands.clear();
+    // commands = {
+    //    "cmd1",
+    //    "cmd2",
+    //    "cmd3",
+    //    "cmd4",
+    //    "cmd5"};
+
+    for (const auto &s : commands)
     {
-        queueCommands.AddCommand(s);
+        staticBlock.AddCommand(s);
     }
 
-    queueCommands.AddCommand("EOF");
+    staticBlock.AddCommand("EOF");
     return 0;
 }

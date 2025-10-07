@@ -3,17 +3,20 @@
 #include <iostream>
 #include <string>
 
+#include "../Block/BlockType.h"
+
 namespace otus
 {
-    class Command
+    class Block2
     {
     private:
     protected:
         std::size_t pointer = 0;
+        BlockType blockType;
 
     public:
-        Command() = default;
-        virtual ~Command() = default;
+        explicit Block2(BlockType blockType);
+        virtual ~Block2() = default;
 
         virtual void AddCommand(const std::string &command) = 0;
 
@@ -23,6 +26,12 @@ namespace otus
         virtual void Pop() = 0;
         virtual bool End() = 0;
 
+        virtual bool IsComlete() const = 0;
+        virtual void MakeComlete();
+
         void Reset();
+        BlockType GetBlockType() const;
+        // virtual BlockType GetCurrentBlockType() const = 0;
+        // virtual BlockType GetNextBlockType() const = 0;
     };
 }
