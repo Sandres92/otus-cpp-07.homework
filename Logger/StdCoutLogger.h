@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "ILogger.h"
 
 namespace otus
@@ -10,6 +12,6 @@ namespace otus
         StdCoutLogger() = default;
         ~StdCoutLogger() = default;
 
-        // void Print(QueueCommands customQueue) const override;
+        void Message(std::ostringstream stream) const override;
     };
 }

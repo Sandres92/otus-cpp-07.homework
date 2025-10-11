@@ -10,11 +10,10 @@ namespace otus
         std::string command;
 
     public:
-        CommandBlock2(/* args */);
+        CommandBlock2(const std::string &command);
         ~CommandBlock2();
 
         void AddCommand(const std::string &command) override;
-        bool IsComlete() const override;
 
         std::string Front() override;
         void Pop() override;

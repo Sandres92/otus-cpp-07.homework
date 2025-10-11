@@ -2,15 +2,8 @@
 
 namespace otus
 {
-    // void StdCoutLogger::Print(QueueCommands customQueue) const
-    //{
-    //     if (customQueue.Size() == 1)
-    //     {
-    //         std::cout << "1\n";
-    //     }
-    //     else
-    //     {
-    //         std::cout << "0\n";
-    //     }
-    // }
+    void StdCoutLogger::Message(std::ostringstream stream) const
+    {
+        std::cout << stream.str();
+    }
 }

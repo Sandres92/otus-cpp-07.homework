@@ -1,5 +1,6 @@
 #include "LogSystem.h"
 #include "../Block/DynamicBlock.h"
+#include "../Block2/DynamicBlock2.h"
 
 namespace otus
 {
@@ -8,7 +9,12 @@ namespace otus
         loggers.push_back(std::move(logger));
     }
 
-    void LogSystem::Print(const DynamicBlock &dynamicBlock)
+    std::string LogSystem::FormString(const DynamicBlock2 &dynamicBlock)
+    {
+        return "";
+    }
+
+    void LogSystem::Print(const DynamicBlock2 &dynamicBlock)
     {
         // if (dynamicBlock.SizeBlocks() == 0)
         //{
@@ -40,5 +46,14 @@ namespace otus
         //    }
         //}
         // std::cout << "\n";
+
+        std::string logString = FormString(dynamicBlock);
+        std::cout << logString;
+    }
+
+    void LogSystem::SaveToFile(const DynamicBlock2 &dynamicBlock)
+    {
+        std::string logString = FormString(dynamicBlock);
+        // save to file
     }
 }

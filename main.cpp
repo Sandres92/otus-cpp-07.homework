@@ -6,6 +6,7 @@
 #include "Block/DynamicBlock.h"
 
 #include "Block2/DynamicBlock2.h"
+#include "Block3/Block3.h"
 
 using namespace std;
 
@@ -18,6 +19,7 @@ int main(int argc, char *argv[])
     }
 
     otus::StaticBlock::SetQuantityCommands(n);
+    otus::Block3::SetQuantityCommands(n);
 
     // std::vector<std::string> commands{
     //     "cmd1",
@@ -70,7 +72,7 @@ int main(int argc, char *argv[])
     //     "}",
     //     "cmd4"};
 
-    otus::StaticBlock staticBlock;
+    // otus::StaticBlock staticBlock;
 
     // commands.clear();
     // commands = {
@@ -80,6 +82,7 @@ int main(int argc, char *argv[])
     //    "cmd4",
     //    "cmd5"};
 
+    otus::Block3 staticBlock;
     for (const auto &s : commands)
     {
         staticBlock.AddCommand(s);

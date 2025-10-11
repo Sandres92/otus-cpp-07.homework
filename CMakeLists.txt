@@ -11,7 +11,7 @@ configure_file(version.h.in version.h)
 
 add_executable(bulk_cli main.cpp Logger/StdCoutLogger.cpp 
 Block/Block.cpp Block/DynamicBlock.cpp Block/StaticBlock.cpp 
-Block/CommandsBlock.cpp)
+Block/CommandsBlock.cpp Block3/Block3.cpp)
 
 add_library(bulk lib.cpp)
 

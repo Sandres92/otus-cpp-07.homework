@@ -11,7 +11,6 @@ namespace otus
     {
     private:
     protected:
-        std::size_t pointer = 0;
         BlockType blockType;
 
     public:
@@ -26,7 +25,7 @@ namespace otus
         virtual void Pop() = 0;
         virtual bool End() = 0;
 
-        virtual bool IsComlete() const = 0;
+        virtual bool IsComlete() const;
         virtual void MakeComlete();
 
         void Reset();

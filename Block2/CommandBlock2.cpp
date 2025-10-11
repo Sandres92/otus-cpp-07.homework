@@ -2,7 +2,8 @@
 
 namespace otus
 {
-    CommandBlock2::CommandBlock2(/* args */) : Block2(BlockType::DynamicBlock)
+    CommandBlock2::CommandBlock2(const std::string &command) : command(command),
+                                                               Block2(BlockType::DynamicBlock)
     {
     }
 
@@ -15,7 +16,21 @@ namespace otus
         this->command = command;
     }
 
-    bool CommandBlock2::IsComlete() const
+    size_t CommandBlock2::Size() const noexcept
+    {
+        return 1;
+    }
+
+    std::string CommandBlock2::Front()
+    {
+        return "";
+    }
+
+    void CommandBlock2::Pop()
+    {
+    }
+
+    bool CommandBlock2::End()
     {
         return true;
     }

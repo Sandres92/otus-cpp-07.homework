@@ -14,7 +14,7 @@ namespace otus
     {
     }
 
-    bool Block2::IsComlete()
+    bool Block2::IsComlete() const
     {
         return true;
     }

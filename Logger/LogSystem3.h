@@ -1,21 +1,22 @@
 #include <memory>
 #include <vector>
 #include <string>
+#include <queue>
+#include <sstream>
 
 #include "ILogger.h"
 
 namespace otus
 {
-    class LogSystem
+    class LogSystem3
     {
     private:
         static std::vector<std::unique_ptr<ILogger>> loggers;
-        static std::string FormString(const DynamicBlock2 &dynamicBlock);
 
     public:
         static void AddLogger(std::unique_ptr<ILogger> logger);
 
-        static void Print(const DynamicBlock2 &dynamicBlock);
-        void SaveToFile(const DynamicBlock2 &dynamicBlock);
+        static void Message(std::vector<std::string> commands,
+                            std::queue<int> openDynamic);
     };
 }
