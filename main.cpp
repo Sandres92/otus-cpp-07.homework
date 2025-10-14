@@ -1,12 +1,15 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <thread>
+#include <chrono>
 
 #include "Block/StaticBlock.h"
 #include "Block/DynamicBlock.h"
 
 #include "Block2/DynamicBlock2.h"
 #include "Block3/Block3.h"
+#include "Block3/AddCommandType.h"
 
 using namespace std;
 
@@ -19,7 +22,7 @@ int main(int argc, char *argv[])
     }
 
     otus::StaticBlock::SetQuantityCommands(n);
-    otus::Block3::SetQuantityCommands(n);
+    otus::Block3::SetMaxCommands(n);
 
     // std::vector<std::string> commands{
     //     "cmd1",
@@ -57,7 +60,8 @@ int main(int argc, char *argv[])
         "}",
         "cmd3",
         "cmd4",
-        "}"};
+        "}",
+        "EOF"};
 
     // std::vector<std::string> commands{
     //     "cmd1",
@@ -83,11 +87,17 @@ int main(int argc, char *argv[])
     //    "cmd5"};
 
     otus::Block3 staticBlock;
-    for (const auto &s : commands)
+
+    auto it = commands.begin();
+    int index = 0;
+    while (it != commands.end() &&
+           staticBlock.AddCommand(*it) != otus::AddCommandType::FinishAddCommand)
     {
-        staticBlock.AddCommand(s);
+        std::cout << *it << "\n";
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        ++it;
+        ++index;
     }
 
-    staticBlock.AddCommand("EOF");
     return 0;
 }

@@ -4,8 +4,10 @@
 #include <stack>
 #include <iostream>
 #include <chrono>
+#include <cstdint>
 
 #include "../Logger/LogSystem3.h"
+#include "AddCommandType.h"
 
 namespace otus
 {
@@ -13,24 +15,23 @@ namespace otus
     class Block3
     {
     private:
-        static inline QuantityCommands_t quantityCommands = 1;
+        static inline QuantityCommands_t MAX_COMMANDS = 1;
 
         std::vector<std::string> commands;
         std::queue<size_t> openDynamic;
         size_t closeDynamic = 0;
-        std::time_t time;
+        int64_t time;
 
     public:
         Block3() = default;
         ~Block3() = default;
 
-        void AddCommand(std::string command);
+        AddCommandType AddCommand(std::string command);
         void Print();
-        void SaveToFile();
 
-        static void SetQuantityCommands(QuantityCommands_t _quantityCommands)
+        static void SetMaxCommands(QuantityCommands_t _MAX_COMMANDS)
         {
-            quantityCommands = _quantityCommands;
+            MAX_COMMANDS = _MAX_COMMANDS;
         }
     };
 }

@@ -2,13 +2,14 @@
 
 namespace otus
 {
-    void Block3::AddCommand(std::string command)
+    AddCommandType Block3::AddCommand(std::string command)
     {
+        AddCommandType addCommandType = AddCommandType::ContinueAddCommand;
+
         if (command == "{")
         {
             if (openDynamic.size() == 0)
             {
-                std::cout << "11111111111111\n";
                 Print();
             }
             openDynamic.push(commands.size());
@@ -28,22 +29,30 @@ namespace otus
             {
                 Print();
             }
+
+            addCommandType = AddCommandType::FinishAddCommand;
         }
         else
         {
-            if (openDynamic.size() == 1 && commands.size() == 0)
+            if (openDynamic.size() != 0 && commands.size() == 0)
             {
                 auto now = std::chrono::system_clock::now();
-                time = std::chrono::system_clock::to_time_t(now);
+                auto duration = now.time_since_epoch();
+                time = std::chrono::duration_cast<std::chrono::milliseconds>(
+                           duration)
+                           .count();
             }
 
             commands.push_back(command);
 
-            if (openDynamic.size() == 0 && commands.size() == 3)
+            if (openDynamic.size() == 0 &&
+                commands.size() == Block3::MAX_COMMANDS)
             {
                 Print();
             }
         }
+
+        return addCommandType;
     }
 
     void Block3::Print()
@@ -55,7 +64,6 @@ namespace otus
 
         std::ostringstream stream;
 
-        stream << "bulk: ";
         for (size_t i = 0; i != commands.size(); ++i)
         {
             stream << commands[i];
@@ -72,25 +80,10 @@ namespace otus
                 stream << "\n";
             }
         }
-        stream << "\n";
 
         commands.clear();
 
-        std::cout << stream.str();
-    }
-
-    void Block3::SaveToFile()
-    {
-        std::cout << "bulk: ";
-        for (size_t i = 0; i != commands.size(); ++i)
-        {
-            std::cout << commands.front();
-
-            if (i != commands.size() - 1)
-            {
-                std::cout << ", ";
-            }
-        }
-        std::cout << "\n";
+        LogSystem3::Print(stream);
+        LogSystem3::SaveToFile(time, stream);
     }
 }
