@@ -2,7 +2,6 @@
 
 #include <fstream>
 
-#include "ILogger.h"
 #include "IFileLogger.h"
 
 namespace otus

@@ -4,14 +4,9 @@
 #include <thread>
 #include <chrono>
 
-#include "Block/StaticBlock.h"
-#include "Block/DynamicBlock.h"
+#include "Bulk/Bulk.h"
 
-#include "Block2/DynamicBlock2.h"
-#include "Block3/Block3.h"
-#include "Block3/AddCommandType.h"
-
-#include "Logger/LogSystem3.h"
+#include "Logger/LogSystem.h"
 #include "Logger/StdCoutLogger.h"
 #include "Logger/FileLogger.h"
 
@@ -25,8 +20,7 @@ int main(int argc, char *argv[])
         n = atoi(argv[1]);
     }
 
-    otus::StaticBlock::SetQuantityCommands(n);
-    otus::Block3::SetMaxCommands(n);
+    otus::Bulk::SetMaxCommands(n);
 
     otus::LogSystem3::AddConsoleLogger(make_unique<otus::StdCoutLogger>());
     otus::LogSystem3::AddFileLogger(make_unique<otus::FileLogger>());
@@ -93,7 +87,7 @@ int main(int argc, char *argv[])
     //    "cmd4",
     //    "cmd5"};
 
-    otus::Block3 staticBlock;
+    otus::Bulk staticBlock;
 
     auto it = commands.begin();
     int index = 0;

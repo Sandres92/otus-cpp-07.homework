@@ -6,13 +6,13 @@
 #include <chrono>
 #include <cstdint>
 
-#include "../Logger/LogSystem3.h"
+#include "../Logger/LogSystem.h"
 #include "AddCommandType.h"
 
 namespace otus
 {
     using QuantityCommands_t = size_t;
-    class Block3
+    class Bulk
     {
     private:
         enum class LogType
@@ -32,8 +32,8 @@ namespace otus
         int64_t time;
 
     public:
-        Block3() = default;
-        ~Block3() = default;
+        Bulk() = default;
+        ~Bulk() = default;
 
         AddCommandType AddCommand(std::string command);
 

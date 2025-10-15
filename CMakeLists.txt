@@ -9,10 +9,8 @@ option(WITH_BOOST_TEST "Whether to build Boost test" ON)
 
 configure_file(version.h.in version.h)
 
-add_executable(bulk_cli main.cpp Logger/LogSystem3.h  Logger/LogSystem3.cpp 
-Logger/StdCoutLogger.cpp Logger/FileLogger.cpp 
-Block/Block.cpp Block/DynamicBlock.cpp Block/StaticBlock.cpp 
-Block/CommandsBlock.cpp Block3/Block3.cpp)
+add_executable(bulk_cli main.cpp Logger/LogSystem.cpp
+Logger/StdCoutLogger.cpp Logger/FileLogger.cpp Bulk/Bulk.cpp)
 
 add_library(bulk lib.cpp)
 

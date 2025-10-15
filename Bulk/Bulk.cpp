@@ -1,10 +1,10 @@
-#include "Block3.h"
+#include "Bulk.h"
 
 namespace otus
 {
-    QuantityCommands_t Block3::MAX_COMMANDS = 1;
+    QuantityCommands_t Bulk::MAX_COMMANDS = 1;
 
-    AddCommandType Block3::AddCommand(std::string command)
+    AddCommandType Bulk::AddCommand(std::string command)
     {
         AddCommandType addCommandType = AddCommandType::ContinueAddCommand;
 
@@ -48,7 +48,7 @@ namespace otus
             commands.push_back(command);
 
             if (openDynamic.size() == 0 &&
-                commands.size() == Block3::MAX_COMMANDS)
+                commands.size() == Bulk::MAX_COMMANDS)
             {
                 PrintLog(LogType::ConsoleOnly);
             }
@@ -57,7 +57,7 @@ namespace otus
         return addCommandType;
     }
 
-    void Block3::PrintLog(LogType logType)
+    void Bulk::PrintLog(LogType logType)
     {
         if (commands.size() == 0)
         {
