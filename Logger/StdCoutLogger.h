@@ -1,17 +1,17 @@
+#pragma once
+
 #include <iostream>
 
-#include "ILogger.h"
+#include "IConsoleLogger.h"
 
 namespace otus
 {
-    class StdCoutLogger : public ILogger
+    class StdCoutLogger : public IConsoleLogger
     {
-    private:
-        /* data */
     public:
         StdCoutLogger() = default;
         ~StdCoutLogger() = default;
 
-        void Message(std::ostringstream stream) const override;
+        void Print(const std::ostringstream &stream) const override;
     };
 }

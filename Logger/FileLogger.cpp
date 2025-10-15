@@ -2,15 +2,13 @@
 
 namespace otus
 {
-    // void FileLogger::Print(QueueCommands customQueue) const
-    //{
-    //     if (customQueue.Size() == 1)
-    //     {
-    //         std::cout << "1\n";
-    //     }
-    //     else
-    //     {
-    //         std::cout << "0\n";
-    //     }
-    // }
+    void FileLogger::SaveToFile(std::string fileName, const std::ostringstream &stream) const
+    {
+        std::ofstream out(fileName, std::ios::out);
+        if (out.is_open())
+        {
+            out << "bulk: " << stream.str() << "\n";
+        }
+        out.close();
+    }
 }

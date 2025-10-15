@@ -2,8 +2,8 @@
 
 namespace otus
 {
-    void StdCoutLogger::Message(std::ostringstream stream) const
+    void StdCoutLogger::Print(const std::ostringstream &stream) const
     {
-        std::cout << stream.str();
+        std::cout << "bulk: " << stream.str() << "\n";
     }
 }

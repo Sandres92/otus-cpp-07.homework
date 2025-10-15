@@ -1,15 +1,18 @@
+#pragma once
+
+#include <fstream>
+
 #include "ILogger.h"
+#include "IFileLogger.h"
 
 namespace otus
 {
-    class FileLogger : public ILogger
+    class FileLogger : public IFileLogger
     {
-    private:
-        /* data */
     public:
         FileLogger() = default;
         ~FileLogger() = default;
 
-        // void Print(QueueCommands customQueue) const override;
+        void SaveToFile(std::string fileName, const std::ostringstream &stream) const override;
     };
 }

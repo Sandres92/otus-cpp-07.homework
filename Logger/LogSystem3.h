@@ -1,3 +1,5 @@
+#pragma once
+
 #include <memory>
 #include <vector>
 #include <string>
@@ -9,44 +11,43 @@
 #include <iomanip>
 
 #include "ILogger.h"
+#include "IFileLogger.h"
+#include "IConsoleLogger.h"
 
 namespace otus
 {
     class LogSystem3
     {
     private:
-        static std::vector<std::unique_ptr<ILogger>> loggers;
+        static std::vector<std::unique_ptr<IConsoleLogger>> consoleLoggers;
+        static std::vector<std::unique_ptr<IFileLogger>> fileLoggers;
 
     public:
-        static void AddLogger(std::unique_ptr<ILogger> logger)
+        static void AddConsoleLogger(std::unique_ptr<IConsoleLogger> consoleLogger)
         {
-            loggers.push_back(std::move(logger));
+            consoleLoggers.push_back(std::move(consoleLogger));
+        }
+
+        static void AddFileLogger(std::unique_ptr<IFileLogger> fileLogger)
+        {
+            fileLoggers.push_back(std::move(fileLogger));
         }
 
         static void Print(const std::ostringstream &stream)
         {
-            // std::cout << "bulk " << &stream << "\n";
-            if (stream)
+            for (size_t i = 0; i != consoleLoggers.size(); ++i)
             {
+                consoleLoggers[i]->Print(stream);
             }
         }
 
         static void SaveToFile(int64_t time, const std::ostringstream &stream)
         {
-            if (time && stream)
+            std::string fileName = "bulk_" + std::to_string(time) + ".log";
+            for (size_t i = 0; i != fileLoggers.size(); ++i)
             {
+                fileLoggers[i]->SaveToFile(fileName, stream);
             }
-            // std::string fileName0 = "bulk_" + std::to_string(time) + ".log";
-            // std::cout << fileName0 << "\n";
-
-            std::ofstream out;
-            std::string fileName;
-            out.open(fileName);
-            if (out.is_open())
-            {
-                out << &stream << "\n";
-            }
-            out.close();
         }
     };
 }

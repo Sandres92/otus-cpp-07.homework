@@ -1,3 +1,5 @@
+#pragma once
+
 #include <sstream>
 
 namespace otus
@@ -10,6 +12,6 @@ namespace otus
         ILogger() = default;
         ~ILogger() = default;
 
-        virtual void Message(std::ostringstream stream) const = 0;
+        virtual void Message(const std::ostringstream &stream) const = 0;
     };
 }

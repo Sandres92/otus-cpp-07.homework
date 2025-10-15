@@ -15,7 +15,16 @@ namespace otus
     class Block3
     {
     private:
-        static inline QuantityCommands_t MAX_COMMANDS = 1;
+        enum class LogType
+        {
+            ConsoleOnly,
+            FileOnly,
+            ConsoleAndFile
+        };
+
+        void PrintLog(LogType logType);
+
+        static QuantityCommands_t MAX_COMMANDS;
 
         std::vector<std::string> commands;
         std::queue<size_t> openDynamic;
@@ -27,7 +36,6 @@ namespace otus
         ~Block3() = default;
 
         AddCommandType AddCommand(std::string command);
-        void Print();
 
         static void SetMaxCommands(QuantityCommands_t _MAX_COMMANDS)
         {

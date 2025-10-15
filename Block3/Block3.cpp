@@ -2,6 +2,8 @@
 
 namespace otus
 {
+    QuantityCommands_t Block3::MAX_COMMANDS = 1;
+
     AddCommandType Block3::AddCommand(std::string command)
     {
         AddCommandType addCommandType = AddCommandType::ContinueAddCommand;
@@ -10,7 +12,7 @@ namespace otus
         {
             if (openDynamic.size() == 0)
             {
-                Print();
+                PrintLog(LogType::ConsoleOnly);
             }
             openDynamic.push(commands.size());
         }
@@ -19,7 +21,7 @@ namespace otus
             ++closeDynamic;
             if (openDynamic.size() == closeDynamic)
             {
-                Print();
+                PrintLog(LogType::ConsoleAndFile);
                 // SaveToFile();
             }
         }
@@ -27,7 +29,7 @@ namespace otus
         {
             if (openDynamic.size() == 0)
             {
-                Print();
+                PrintLog(LogType::ConsoleOnly);
             }
 
             addCommandType = AddCommandType::FinishAddCommand;
@@ -48,14 +50,14 @@ namespace otus
             if (openDynamic.size() == 0 &&
                 commands.size() == Block3::MAX_COMMANDS)
             {
-                Print();
+                PrintLog(LogType::ConsoleOnly);
             }
         }
 
         return addCommandType;
     }
 
-    void Block3::Print()
+    void Block3::PrintLog(LogType logType)
     {
         if (commands.size() == 0)
         {
@@ -83,7 +85,18 @@ namespace otus
 
         commands.clear();
 
-        LogSystem3::Print(stream);
-        LogSystem3::SaveToFile(time, stream);
+        if (logType == LogType::ConsoleOnly)
+        {
+            LogSystem3::Print(stream);
+        }
+        else if (logType == LogType::FileOnly)
+        {
+            LogSystem3::SaveToFile(time, stream);
+        }
+        else if (logType == LogType::ConsoleAndFile)
+        {
+            LogSystem3::Print(stream);
+            LogSystem3::SaveToFile(time, stream);
+        }
     }
 }

@@ -11,6 +11,10 @@
 #include "Block3/Block3.h"
 #include "Block3/AddCommandType.h"
 
+#include "Logger/LogSystem3.h"
+#include "Logger/StdCoutLogger.h"
+#include "Logger/FileLogger.h"
+
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -23,6 +27,9 @@ int main(int argc, char *argv[])
 
     otus::StaticBlock::SetQuantityCommands(n);
     otus::Block3::SetMaxCommands(n);
+
+    otus::LogSystem3::AddConsoleLogger(make_unique<otus::StdCoutLogger>());
+    otus::LogSystem3::AddFileLogger(make_unique<otus::FileLogger>());
 
     // std::vector<std::string> commands{
     //     "cmd1",
