@@ -1,0 +1,30 @@
+<map id="Logger/LogSystem.cpp" name="Logger/LogSystem.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="417,5,586,31"/>
+<area shape="rect" id="Node000002" href="$LogSystem_8h.html" title=" " alt="" coords="448,79,555,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="504,31,504,65,499,65,499,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,83,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="448,102,294,123,96,155,96,149,294,117,447,97"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="107,152,170,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="448,105,190,155,184,156,183,151,189,149,447,100"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="268,225,327,251"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="448,99,388,106,324,117,269,133,249,143,236,154,230,169,236,185,250,201,268,215,265,220,247,205,232,188,225,169,231,150,246,138,267,128,323,112,388,101,447,94"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="246,152,309,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="466,107,323,152,321,147,465,101"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="883,225,957,251"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="555,92,672,99,812,111,935,128,977,138,1000,150,1007,160,1008,170,998,189,980,207,957,221,954,217,976,202,994,186,1002,169,1001,162,997,154,975,143,934,133,812,116,672,105,555,98"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="461,152,541,177"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="504,104,504,138,499,138,499,104"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="565,152,632,177"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="519,102,573,141,570,146,515,106"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="657,152,730,177"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="533,102,650,144,648,149,531,107"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="755,152,829,177"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="549,101,742,148,741,154,547,107"/>
+<area shape="rect" id="Node000012" href="$IFileLogger_8h.html" title=" " alt="" coords="333,152,437,177"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="484,106,417,147,415,142,481,102"/>
+<area shape="rect" id="Node000013" href="$IConsoleLogger_8h.html" title=" " alt="" coords="853,152,987,177"/>
+<area shape="poly" id="edge14_Node000002_Node000013" title=" " alt="" coords="555,99,840,147,839,152,554,104"/>
+<area shape="poly" id="edge12_Node000012_Node000005" title=" " alt="" coords="373,179,324,219,321,214,370,175"/>
+<area shape="poly" id="edge13_Node000012_Node000007" title=" " alt="" coords="438,173,450,175,684,207,869,228,868,234,683,212,449,180,437,178"/>
+<area shape="poly" id="edge15_Node000013_Node000007" title=" " alt="" coords="923,178,923,212,917,212,917,178"/>
+</map>

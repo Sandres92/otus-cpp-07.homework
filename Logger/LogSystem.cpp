@@ -2,6 +2,6 @@
 
 namespace otus
 {
-    std::vector<std::unique_ptr<otus::IConsoleLogger>> LogSystem3::consoleLoggers;
-    std::vector<std::unique_ptr<otus::IFileLogger>> LogSystem3::fileLoggers;
+    std::vector<std::unique_ptr<otus::IConsoleLogger>> LogSystem::consoleLoggers;
+    std::vector<std::unique_ptr<otus::IFileLogger>> LogSystem::fileLoggers;
 }

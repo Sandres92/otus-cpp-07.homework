@@ -10,7 +10,8 @@ option(WITH_BOOST_TEST "Whether to build Boost test" ON)
 configure_file(version.h.in version.h)
 
 add_executable(bulk_cli main.cpp Logger/LogSystem.cpp
-Logger/StdCoutLogger.cpp Logger/FileLogger.cpp Bulk/Bulk.cpp)
+Logger/StdCoutLogger.cpp Logger/FileLogger.cpp Bulk/Bulk.cpp
+Bulk/Bulk_moc.cpp)
 
 add_library(bulk lib.cpp)
 
@@ -29,8 +30,9 @@ target_link_libraries(bulk_cli PRIVATE
 
 if(WITH_BOOST_TEST)
     find_package(Boost COMPONENTS unit_test_framework REQUIRED)
-    add_executable(test_bulk test_bulk.cpp 
-    )
+    add_executable(test_bulk test_bulk.cpp Logger/LogSystem.cpp
+    Logger/StdCoutLogger.cpp Logger/FileLogger.cpp Bulk/Bulk.cpp
+    Bulk/Bulk_moc.cpp Logger/StdCoutLogger_moc.cpp)
 
     set_target_properties(test_bulk PROPERTIES
         CXX_STANDARD 17

@@ -1,0 +1,13 @@
+<map id="Logger/StdCoutLogger_moc.h" name="Logger/StdCoutLogger_moc.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="11,5,176,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,64,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,47,54,84,50,80,77,44"/>
+<area shape="rect" id="Node000003" href="$StdCoutLogger_8h.html" title=" " alt="" coords="88,93,216,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="110,44,137,80,133,84,105,47"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="47,167,127,192"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="143,121,108,158,105,155,139,117"/>
+<area shape="rect" id="Node000005" href="$IConsoleLogger_8h.html" title=" " alt="" coords="151,167,284,192"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="165,117,199,155,196,158,161,121"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="180,240,255,265"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="220,192,220,226,215,226,215,192"/>
+</map>

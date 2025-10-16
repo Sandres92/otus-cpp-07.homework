@@ -1,0 +1,15 @@
+<map id="Logger/StdCoutLogger_moc.cpp" name="Logger/StdCoutLogger_moc.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="11,5,176,45"/>
+<area shape="rect" id="Node000002" href="$StdCoutLogger__moc_8h.html" title=" " alt="" coords="11,93,175,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,46,96,79,91,79,91,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,167,64,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="86,121,55,158,51,155,82,117"/>
+<area shape="rect" id="Node000004" href="$StdCoutLogger_8h.html" title=" " alt="" coords="88,167,216,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="105,117,136,155,132,158,101,121"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="47,240,127,265"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="143,194,108,232,105,228,139,191"/>
+<area shape="rect" id="Node000006" href="$IConsoleLogger_8h.html" title=" " alt="" coords="151,240,284,265"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="165,191,199,228,196,232,161,194"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="180,313,255,339"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="220,266,220,300,215,300,215,266"/>
+</map>

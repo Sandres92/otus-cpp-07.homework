@@ -12,7 +12,7 @@ namespace otus
         {
             if (openDynamic.size() == 0)
             {
-                PrintLog(LogType::ConsoleOnly);
+                LogCommands(LogType::ConsoleOnly);
             }
             openDynamic.push(commands.size());
         }
@@ -21,7 +21,7 @@ namespace otus
             ++closeDynamic;
             if (openDynamic.size() == closeDynamic)
             {
-                PrintLog(LogType::ConsoleAndFile);
+                LogCommands(LogType::ConsoleAndFile);
                 // SaveToFile();
             }
         }
@@ -29,7 +29,7 @@ namespace otus
         {
             if (openDynamic.size() == 0)
             {
-                PrintLog(LogType::ConsoleOnly);
+                LogCommands(LogType::ConsoleOnly);
             }
 
             addCommandType = AddCommandType::FinishAddCommand;
@@ -50,14 +50,14 @@ namespace otus
             if (openDynamic.size() == 0 &&
                 commands.size() == Bulk::MAX_COMMANDS)
             {
-                PrintLog(LogType::ConsoleOnly);
+                LogCommands(LogType::ConsoleOnly);
             }
         }
 
         return addCommandType;
     }
 
-    void Bulk::PrintLog(LogType logType)
+    void Bulk::LogCommands(LogType logType)
     {
         if (commands.size() == 0)
         {
@@ -65,7 +65,7 @@ namespace otus
         }
 
         std::ostringstream stream;
-
+        stream << "bulk: ";
         for (size_t i = 0; i != commands.size(); ++i)
         {
             stream << commands[i];
@@ -82,21 +82,27 @@ namespace otus
                 stream << "\n";
             }
         }
+        stream << "\n";
 
         commands.clear();
 
         if (logType == LogType::ConsoleOnly)
         {
-            LogSystem3::Print(stream);
+            LogSystem::Print(stream);
         }
         else if (logType == LogType::FileOnly)
         {
-            LogSystem3::SaveToFile(time, stream);
+            LogSystem::SaveToFile(time, stream);
         }
         else if (logType == LogType::ConsoleAndFile)
         {
-            LogSystem3::Print(stream);
-            LogSystem3::SaveToFile(time, stream);
+            LogSystem::Print(stream);
+            LogSystem::SaveToFile(time, stream);
         }
+    }
+
+    std::vector<std::string> Bulk::GetCommands() const
+    {
+        return commands;
     }
 }

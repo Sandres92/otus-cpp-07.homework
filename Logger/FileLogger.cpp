@@ -7,7 +7,7 @@ namespace otus
         std::ofstream out(fileName, std::ios::out);
         if (out.is_open())
         {
-            out << "bulk: " << stream.str() << "\n";
+            out << stream.str();
         }
         out.close();
     }

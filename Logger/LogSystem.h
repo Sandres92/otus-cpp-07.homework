@@ -15,7 +15,7 @@
 
 namespace otus
 {
-    class LogSystem3
+    class LogSystem
     {
     private:
         static std::vector<std::unique_ptr<IConsoleLogger>> consoleLoggers;
