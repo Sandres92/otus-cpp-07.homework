@@ -33,33 +33,17 @@ int main(int argc, char *argv[])
     otus::LogSystem::AddConsoleLogger(std::make_unique<otus::StdCoutLogger>());
     otus::LogSystem::AddFileLogger(std::make_unique<otus::FileLogger>());
 
-    std::vector<std::string> commands{
-        "cmd1",
-        "cmd2",
-        "{",
-        "{",
-        "cmd_2_1",
-        "{",
-        "cmd_2_1_1",
-        "}",
-        "cmd_2_2",
-        "}",
-        "cmd3",
-        "cmd4",
-        "}",
-        "EOF"};
+    otus::Bulk bulk;
 
-    otus::Bulk staticBlock;
-
-    auto it = commands.begin();
-    int index = 0;
-    while (it != commands.end() &&
-           staticBlock.AddCommand(*it) != otus::AddCommandType::FinishAddCommand)
+    while (true)
     {
-        std::cout << *it << "\n";
-        std::this_thread::sleep_for(std::chrono::seconds(1));
-        ++it;
-        ++index;
+        std::string command;
+        std::cin >> command;
+
+        if (bulk.AddCommand(command) == otus::AddCommandType::FinishAddCommand)
+        {
+            break;
+        }
     }
 
     return 0;
